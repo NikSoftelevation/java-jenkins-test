@@ -4,7 +4,7 @@ pipeline {
         stage('Compile') {
             steps {
                 script {
-                    def javaHome = tool name: 'JDK', type: 'jdk'
+                    def javaHome = tool name: 'JDK 17', type: 'jdk'
                     if (isUnix()) {
                         sh "${javaHome}/bin/javac Test.java"
                     } else {
@@ -16,7 +16,7 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    def javaHome = tool name: 'JDK', type: 'jdk'
+                    def javaHome = tool name: 'JDK 17', type: 'jdk'
                     if (isUnix()) {
                         sh "${javaHome}/bin/java Test" // Replace with the actual class name if different
                     } else {
