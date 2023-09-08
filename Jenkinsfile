@@ -1,8 +1,25 @@
 pipeline {
     agent any
+
+    tools{
+        maven "maven"
+    }
+
+environment{
+
+    VERSION_NAME="1.34"
+}
+
     stages {
         stage('Compile') {
+
+           when{
+               expression{
+               }
+           }
             steps {
+
+                sh 'echo "${VERSION_NAME}"'
                 script {
                     def javaHome = tool name: 'jdk17', type: 'jdk'
                     if (isUnix()) {
