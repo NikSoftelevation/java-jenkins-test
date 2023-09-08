@@ -14,8 +14,7 @@ environment{
         stage('Compile') {
 
            when{
-               expression{
-               }
+               expression
            }
             steps {
 
