@@ -5,18 +5,15 @@ pipeline {
         maven "maven"
     }
 
-environment{
+      environment{
 
     VERSION_NAME="1.34"
-}
+     }
 
-    stages {
-        stage('Compile') {
+        stages {
+               stage('Compile') {
 
-           when{
-               expression
-           }
-            steps {
+                  steps {
 
                 sh 'echo "${VERSION_NAME}"'
                 script {
